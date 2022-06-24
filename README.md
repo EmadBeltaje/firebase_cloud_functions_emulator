@@ -1,5 +1,5 @@
-## Idea 💡
-#### Test and try cloud functions with FCM locally and for free without upgrade to firebase blaze plan 😎
+## Idea
+#### Test and try cloud functions with FCM locally and for free without upgrade to firebase blaze plan 🔥
 
 ## What you will learn 🧑‍💻
 - Setup NodeJs for cloud functions development 💚
@@ -8,8 +8,9 @@
 - Send fcm (notifications) 🔔
 - Modifiy documents on cloud function 📄
 - Read collections/documents 📖
+- Test our cloud functions with client side in my case (Flutter App) 📱
 
-## What do you need 🧩
+## What do you need
 - Install [NodeJs](https://nodejs.org/en/download/) must be version(10,12,14,16) to support firebase cli
 - Install [Java](https://www.java.com/download/ie_manual.jsp) needed to start the local emulators
 - Now run this command to install Firebase CLI & tools
@@ -18,7 +19,7 @@
     npm install -g firebase-tools
     ```
 
-## Setup project 🚂
+## Setup project
 - Before we start go to [firebase console](https://firebase.google.com/) and create firebase project
 - Login to your firebase account, in cmd run
 
@@ -51,7 +52,7 @@
 
 
 
-## Coding 🧑‍💻
+## Coding
 ##### Open your functions/index.js file and remove all the code and let us start from the zero
 - Import firebase functions modules to access triggers functions & admin modules to access database(firestore) & cloud messaging
   ```js
@@ -179,7 +180,38 @@
         return null;
     });
   ```
-## Support 🪖
+
+## lets test it with client side (in my case Flutter app)
+- first run this command to start your cloud functions emulators
+    ```
+    firebase emulators:start
+    ```
+- You can use my [Flutter Repo](https://github.com/EmadBeltaje/flutter_getx_template) for quick start  
+
+    - Go to lib/utils/fcm_helper.dart  
+    
+    - Now print the generated fcm token  
+    
+        ```
+        static _sendFcmTokenToServer(){
+            var token = MySharedPref.getFcmToken();
+            Logger().e(token); // just print the token
+        }
+        ```
+        
+    - add it to one of users in users collection (field name must be fcm_token)  
+    
+    - create new order to trigger (onOrderCreated) function  
+    
+
+You can follow the video
+
+
+https://user-images.githubusercontent.com/64028200/175286984-f56c0feb-ab5f-453d-b75e-d1e9ba4e1e57.mp4
+
+
+
+## Support
 
 For support, email emadbeltaje@gmail.com or Facebook [Emad Beltaje](https://www.facebook.com/EmadBeltaje/).  
 Dont Forget to star the repo 🌟  
